@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brush sizes -->
+    <dimen name="small_brush">2dp</dimen>
+    <integer name="small_size">2</integer>
+    <dimen name="medium_brush">6dp</dimen>
+    <integer name="medium_size">6</integer>
+    <dimen name="large_brush">12dp</dimen>
+    <integer name="large_size">12</integer>
+    <dimen name="color_size">30dp</dimen>
+</resources>

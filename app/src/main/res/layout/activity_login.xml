@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:id="@+id/login_layout"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/imgPaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/paintpng" />
+
+    <TextView
+        android:id="@+id/txtAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textColor="#F6104F"
+        android:fontFamily="@font/lobster"
+        android:text="Paint App" />
+
+   <!-- <Button
+        android:id="@+id/btnGoogleLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="83dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="50dp"
+        android:textSize="17dp"
+        android:textColor="#FFFF"
+        android:background="@color/colorRed"
+        android:textAllCaps="false"
+        android:text="Continue With Google +" />-->
+
+    <Button
+        android:id="@+id/btnFacebookLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="12dp"
+        android:textSize="17dp"
+        android:drawableStart="@drawable/face"
+        android:textColor="#FFFF"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:text="Continue With Facebook" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+
+</LinearLayout>
