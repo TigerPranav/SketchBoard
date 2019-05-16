@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class DrawingView extends View {
 
-    
+
     //drawing path
     private Path drawPath;
     //drawing and canvas paint

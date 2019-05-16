@@ -56,6 +56,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView imgBitMap;
     ImageView imageCommingSoon;
 
-    AdView adView;
+    private AdView adView;
 
 
     static {
@@ -130,10 +131,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ///////////////////////////////// mob ads////////////////////
 
-        MobileAds.initialize(this, "ca-app-pub-4664100260183976~9564118076");
+        MobileAds.initialize(MainActivity.this, "ca-app-pub-4664100260183976~4021641613");//ca-app-pub-3940256099942544~3347511713
         adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Log.e(MainActivity.class.getName(),"onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Log.e(MainActivity.class.getName(),""+errorCode);
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Log.e(MainActivity.class.getName(),"onAdOpened");
+            }
+
+            @Override
+            public void onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                Log.e(MainActivity.class.getName(),"onAdClicked");
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+                Log.e(MainActivity.class.getName(),"onAdLeftApplication");
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+                Log.e(MainActivity.class.getName(),"onAdClosed");
+            }
+        });
 
         //painting variable initialization/////////////////////////////////////////////////////////////////////////////
         drawView = (DrawingView) findViewById(R.id.drawing);
